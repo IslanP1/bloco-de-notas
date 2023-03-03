@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Editar notas
+{% endblock %}
+
+{% block content %}
+<div class="vh-100  d-flex flex-column justify-content-center align-items-center">
+    {% if request.user.is_authenticated %}
+        {% if nota %}
+        <h2>Editar nota</h2>
+        <form action="{% url 'editar_nota' nota.id %}" method="POST" class="w-50"> {% csrf_token %}
+            <label>Título</label>
+            <input type="text" class="form-control" placeholder="Digite aqui seu título" required name="titulo"
+                value="{{nota.titulo}}">
+            <br>
+            <label class="form-label">Anotações</label>
+            <textarea class="form-control" rows="10" placeholder="Digite sua anotação" required
+                name="anotacao">{{ nota.anotacao }}
+            </textarea>
+            <br>
+            <input type="submit" class="btn bg-primary">
+        </form>
+        {% else %}
+        <h1>{{ mensagem_erro }}</h1>
+        {% endif %}
+    {% else %}
+        <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+            <h1>{{ mensagem_erro }}</h1>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

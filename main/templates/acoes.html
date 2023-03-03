@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Ações
+{% endblock %}
+
+{% block content %}
+    {% if mensagem_erro_deletar %}
+        <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+            <h1>{{ mensagem_erro_deletar }}</h1>
+        </div>
+    {% else %}
+        {% if user.is_authenticated %}
+        <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+            <h1>Seja bem-vindo {{ user.username }} !!!</h1>
+            {% for nota in notas %}
+            <h1>{{nota.titulo}}</h1>
+            <p>{{nota.anotacao}}</p>
+            <a class="btn btn-warning" href="{% url 'editar_nota' nota.id %}">Editar Nota</a>
+            <br>
+            <a class="btn btn-danger" href="{% url 'deletar_nota' nota.id %}">Deletar Nota</a>
+            <br><br><br>
+            {% endfor %}
+            <a class="btn btn-primary" href="{% url 'nova_nota' %}">Criar Nota</a>
+        </div>
+        {% else %}
+        <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+            <h1>{{ mensagem_erro }}</h1>
+        </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}

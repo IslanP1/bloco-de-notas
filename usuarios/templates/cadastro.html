@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Cadastro
+{% endblock %}
+
+{% block content %}
+  <div class="vh-100  d-flex flex-column justify-content-center align-items-center pb-0">
+    <h2>Cadastro de usuários</h2>
+    <form action="{% url 'cadastrar' %}" method="POST" class="w-25"> {%csrf_token%}
+      <label>Username:</label>
+      <input type="text" placeholder="Digite seu username..." class="form-control" required name="username">
+      <br>
+      <label>Senha:</label>
+      <input type="password" placeholder="Digite sua senha..." class="form-control" required name="senha">
+      <br>
+      <label>Confirme sua senha:</label>
+      <input type="password" placeholder="Digite sua senha..." class="form-control" required name="confirme_senha">
+      <br>
+      <input type="submit" class="btn bg-primary" value="SALVAR">
+    </form>
+  </div>
+{% endblock %}
+
+
+    
+
+
+
+

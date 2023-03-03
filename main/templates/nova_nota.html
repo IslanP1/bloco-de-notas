@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Nova nota
+{% endblock %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+    <div class="vh-100  d-flex flex-column justify-content-center align-items-center">
+        <h2>Adicione uma nova anotação</h2>
+        <form action="{% url 'nova_nota' %}" method="POST" class="w-50"> {%csrf_token%}
+            <label>Título</label>
+            <input type="text" class="form-control" placeholder="Digite aqui seu título" required name="titulo">
+            <br>
+            <label class="form-label">Anotações</label>
+            <textarea class="form-control" rows="10" placeholder="Digite sua anotação" required name="anotacao"></textarea>
+            <br>
+            <input type="submit" class="btn bg-primary">
+        </form>
+    </div>
+{% else %}
+    <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+        <h1>{{ mensagem_erro }}</h1>
+    </div>
+{% endif %}
+
+{% endblock %}
