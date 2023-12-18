@@ -6,30 +6,44 @@ Este é um projeto de um site de bloco de notas. Ele permite que os usuários sa
 
 - Clone o repositório: 
 ```python 
+#Requisição http:
 git clone https://github.com/IslanP1/bloco-de-notas.git
+
+#Via chave ssh:
+git clone git@github.com:IslanP1/bloco-de-notas.git
 ```
+
 - Crie um ambiente virtual:
 ```python
-#windows:
+#Windows:
 py -m venv venv
 
 #Linux
-python3 -m venv venv
+python3 -m venv .venv
 ```
+
 - Ative o ambiente virtual:
 ```python
-#windows
-cd venv/Scripts
-.\activate
+#Windows - cmd:
+.\venv\Scripts\activate
+
+#Windows - powershell:
+.\venv\Scripts\activate.ps1
 
 #Linux
-source venv/bin/activate
+. .venv/bin/activate
 ```
+
 - Instale as dependências a partir do requirements.txt:
 ```python
 pip install -r requirements.txt
 ```
+
 - Rode o projeto:
 ```python
-python manage.py runserver
+#Windows
+py manage.py runserver
+
+#Linux
+python3 manage.py runserver
 ```
