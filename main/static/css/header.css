@@ -13,7 +13,7 @@ header {
 
 .nav-container {
     display: grid;
-    grid-template-columns: 77% auto;
+    grid-template-columns: auto 26rem;
     align-items: center;
     margin: 0 10rem;
     padding: 1.3rem 1rem;
