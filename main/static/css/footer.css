@@ -1,0 +1,22 @@
+.footer {
+    background-color: #000000;
+    color: #444444;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-footer p {
+    margin: 1.3rem 0;
+}
+
+.container-footer span {
+    color: #0099ff;
+}
