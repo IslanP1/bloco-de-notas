@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/actions.css' %}">
+{% endblock %}
+
 {% block title %}
   Ações
 {% endblock %}
@@ -12,8 +16,10 @@
         </div>
     {% else %}
         {% if user.is_authenticated %}
-        <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
-            <h1>Seja bem-vindo {{ user.username }} !!!</h1>
+        <div class="vh-100 d-flex flex-column align-items-center">
+            <div class="menssage-top">
+                <h3>Seja bem-vindo {{ user.username }} !!!</h3>
+            </div>
             {% for nota in notas %}
             <h1>{{nota.titulo}}</h1>
             <p>{{nota.anotacao}}</p>
