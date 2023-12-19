@@ -1,0 +1,43 @@
+header {
+    background-color: #000000;
+    color: #0099ff;
+    width: 100%;
+    top: 0;
+    position: fixed;
+}
+
+.link {
+    color: #0099ff;
+    text-decoration: none;
+}
+
+.nav-container {
+    display: grid;
+    grid-template-columns: 77% auto;
+    align-items: center;
+    margin: 0 10rem;
+    padding: 1.3rem 1rem;
+}
+
+.logo-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo-info img {
+    height: 45px;
+}
+
+.logo-info a {
+    font-size: 22px;
+    padding-left: 1rem;
+}
+
+.list-navegation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+}
