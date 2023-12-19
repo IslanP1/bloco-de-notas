@@ -1,3 +1,49 @@
 .menssage-top {
+    text-align: center;
     padding: 6.5rem 0 3rem;      
+}
+
+.container-note {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 8rem;
+}
+
+.container-card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 1rem .7em;
+    padding: 1rem;
+    background-color: #7d7676;
+    color: #000;
+    border-radius: .3rem;
+}
+
+.cheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.action-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.action-options a {
+    text-decoration: none;
+    margin-left: .4rem;
+    color: #4c4949;
+}
+
+.cbody {
+    display: flex;
+    flex-direction: column;
+}
+
+.cbody p {
+    overflow-wrap: break-word;
 }

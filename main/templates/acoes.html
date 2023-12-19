@@ -5,9 +5,7 @@
     <link rel="stylesheet" href="{% static 'css/actions.css' %}">
 {% endblock %}
 
-{% block title %}
-  Ações
-{% endblock %}
+{% block title %} Ações {% endblock %}
 
 {% block content %}
     {% if mensagem_erro_deletar %}
@@ -16,19 +14,29 @@
         </div>
     {% else %}
         {% if user.is_authenticated %}
-        <div class="vh-100 d-flex flex-column align-items-center">
-            <div class="menssage-top">
-                <h3>Seja bem-vindo {{ user.username }} !!!</h3>
-            </div>
-            {% for nota in notas %}
-            <h1>{{nota.titulo}}</h1>
-            <p>{{nota.anotacao}}</p>
-            <a class="btn btn-warning" href="{% url 'editar_nota' nota.id %}">Editar Nota</a>
-            <br>
-            <a class="btn btn-danger" href="{% url 'deletar_nota' nota.id %}">Deletar Nota</a>
-            <br><br><br>
-            {% endfor %}
+        <div class="menssage-top">
+            <h3>Seja bem-vindo {{ user.username }} !!!</h3>
+        </div>
+        <div class="container-note">
             <a class="btn btn-primary" href="{% url 'nova_nota' %}">Criar Nota</a>
+            {% for nota in notas %}
+            <div class="container-card">
+                <div class="cheader">
+                    <h3>{{nota.titulo}}</h3>
+                    <div class="action-options">
+                        <a href="{% url 'editar_nota' nota.id %}">
+                            <i>edit</i>
+                        </a>
+                        <a href="{% url 'deletar_nota' nota.id %}">
+                            <i>delet</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cbody">
+                    <p>{{nota.anotacao}}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
         {% else %}
         <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
