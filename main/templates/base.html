@@ -34,12 +34,15 @@
                     <li class="">
                         <a class="link" href="{% url 'cadastrar' %}">Cadastro</a>
                     </li>
-                    <li class="">
-                        <a class="link" href="{% url 'logar' %}">Login</a>
-                    </li>
+                    {% if user.is_authenticated %}
                     <li class="">
                         <a class="link" href="{% url 'deslogar' %}">Logout</a>
                     </li>
+                    {% else %}
+                    <li class="">
+                        <a class="link" href="{% url 'logar' %}">Login</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
