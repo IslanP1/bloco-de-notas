@@ -3,18 +3,26 @@
     padding: 7rem 0 3rem;      
 }
 
+.container-data {
+    display: grid;
+    grid-template-columns: 22rem auto;
+    padding: 0 4.5rem 5rem;
+}
+
 .container-note {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0 8rem;
+    height: 66vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .container-card {
     display: flex;
     flex-direction: column;
     width: 300px;
-    margin: 1rem .7em;
+    margin: .4rem .7rem;
     padding: 1rem;
     background-color: #7d7676;
     color: #000;
@@ -51,4 +59,11 @@
 .cbody p {
     overflow-wrap: break-word;
     color: #232222;
+}
+
+.details-note {
+    background-color: #7d7676;
+    margin: .4rem 1rem .4rem 2.5rem;
+    padding: 1rem;
+    border-radius: .3rem;
 }

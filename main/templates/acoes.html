@@ -17,27 +17,32 @@
         <div class="menssage-top">
             <h3>Seja bem-vindo {{ user.username }} !!!</h3>
         </div>
-        <div class="container-note">
-            {% for nota in notas %}
-            <div class="container-card">
-                <div class="cheader">
-                    <h3>{{nota.titulo}}</h3>
-                    <div class="action-options">
-                        <a href="{% url 'editar_nota' nota.id %}">
-                            <i class="fa-regular fa-pen-to-square icon-options"></i>
-                        </a>
-                        <a href="{% url 'deletar_nota' nota.id %}">
-                            <i class="fa-regular fa-trash-can icon-options"></i>
-                        </a>
+        <div class="container-data">
+            <div class="container-note">
+                {% for nota in notas %}
+                <div class="container-card">
+                    <div class="cheader">
+                        <h3>{{nota.titulo}}</h3>
+                        <div class="action-options">
+                            <a href="{% url 'editar_nota' nota.id %}">
+                                <i class="fa-regular fa-pen-to-square icon-options"></i>
+                            </a>
+                            <a href="{% url 'deletar_nota' nota.id %}">
+                                <i class="fa-regular fa-trash-can icon-options"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cbody">
+                        <p>{{nota.anotacao}}</p>
                     </div>
                 </div>
-                <div class="cbody">
-                    <p>{{nota.anotacao}}</p>
-                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+            <div class="details-note">
+
+            </div>
+            {% else %}
         </div>
-        {% else %}
         <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
             <h1>{{ mensagem_erro }}</h1>
         </div>
