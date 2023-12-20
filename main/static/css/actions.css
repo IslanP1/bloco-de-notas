@@ -1,6 +1,6 @@
 .menssage-top {
     text-align: center;
-    padding: 6.5rem 0 3rem;      
+    padding: 7rem 0 3rem;      
 }
 
 .container-note {
@@ -39,6 +39,10 @@
     color: #4c4949;
 }
 
+.icon-options {
+    font-size: 16px;
+}
+
 .cbody {
     display: flex;
     flex-direction: column;
@@ -46,4 +50,5 @@
 
 .cbody p {
     overflow-wrap: break-word;
+    color: #232222;
 }
